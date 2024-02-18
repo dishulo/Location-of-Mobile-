@@ -21,7 +21,8 @@ def get_phone_number_info(phone_number):
     return info
 
 def get_coordinates_from_address(address):
-    geolocator = Nominatim(user_agent="")  # Specify your own user-agent string here
+    # Specify your own user-agent string here
+    geolocator = Nominatim(user_agent="location.py")  
     try:
         location = geolocator.geocode(address)
         if location:
@@ -46,4 +47,5 @@ if coordinates:
     print(f"Latitude: {latitude}, Longitude: {longitude}")
 else:
     print("Coordinates not found.")
+
 
